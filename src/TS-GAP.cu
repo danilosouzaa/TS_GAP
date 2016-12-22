@@ -153,15 +153,15 @@ int main(int argc, char *argv[])
 	gpuMemcpy(d_short_list, h_short_list,sizeof(int)*(nBlocks*h_instance->nJobs*h_instance->mAgents), cudaMemcpyHostToDevice);
 
 
-	int blockSize;      // The launch configurator returned block size
-	int minGridSize;    // The minimum grid size needed to achieve the maximum occupancy for a full device launch
-	int gridSize;
-	int N = 1000000;
+//	int blockSize;      // The launch configurator returned block size
+//	int minGridSize;    // The minimum grid size needed to achieve the maximum occupancy for a full device launch
+//	int gridSize;
+//	int N = 1000000;
 
-	cudaOccupancyMaxPotentialBlockSize(&minGridSize, &blockSize,TS_GAP, 0, N);
+//	cudaOccupancyMaxPotentialBlockSize(&minGridSize, &blockSize,TS_GAP, 0, N);
 
-		printf("block size %d\n",blockSize);
-		printf("Min Grid %d\n",minGridSize);
+//		printf("block size %d\n",blockSize);
+//		printf("Min Grid %d\n",minGridSize);
 	//	getchar();
 
 
@@ -191,6 +191,7 @@ int main(int argc, char *argv[])
 	int menor,aux1,t1,m1,m2,aux;
 	int *v_menor_pos = (int*)malloc(sizeof(int)*nBlocks);
 	while(ite<=n_iteration){
+		printf("%d \n",ite);
 		TS_GAP<<<nBlocks,nThreads>>>(d_instance, d_solution,d_ejection, d_short_list, d_seed, states, ite, sizeTabu, n_busca);
 		cudaDeviceSynchronize();
 		gpuMemcpy(h_instance, d_instance, size_instance, cudaMemcpyDeviceToHost);

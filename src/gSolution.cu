@@ -31,7 +31,7 @@ __global__ void TS_GAP(Instance *inst, Solution *sol,EjectionChain *ejection, in
 			{
 				res_aux[i]=0;
 			}
-
+			aux = 0;
 			ejection->delta[term] = 0;
 			ejection->op[term] = curand(&states[term])%2;
 			__syncthreads();
