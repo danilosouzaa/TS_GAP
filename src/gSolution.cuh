@@ -11,6 +11,6 @@ extern "C" {
 #include "Solution.h"
 }
 
-__global__ void TS_GAP(Instance *inst, Solution *sol,EjectionChain *ejection, int *tabuListshort,unsigned int *seed, curandState_t* states, int iteration, int sizeTabu, int n_busca);
+__global__ void TS_GAP(Instance *inst, Solution *sol,EjectionChain *ejection, int *tabuListshort,unsigned int *seed, curandState_t* states, int iteration, int n_busca);
 
 #endif /* GSOLUTION_CUH_ */

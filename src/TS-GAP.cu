@@ -1,6 +1,6 @@
 /*
  ============================================================================
- Name        : TS-GAP.cu
+ name        : TS-GAP.cu
  Author      : 
  Version     :
  Copyright   : Your copyright notice
@@ -23,9 +23,9 @@
 #include "gSolution.cuh"
 #include "guloso.h"
 
-const int nThreads = 576;
-const int nBlocks = 24;
-const int maxChain = 8;
+const int nThreads = 100;
+const int nBlocks = 3;
+const int maxChain = 10;
 
 int main(int argc, char *argv[])
 {
@@ -71,6 +71,7 @@ int main(int argc, char *argv[])
 
 	//Load Instance
 	char nameAux[50] = "../Instances/";
+	const char *temp_teste = argv[1];
 	strcat(nameAux,argv[1]);
 	printf("%s \n",nameAux);
 	const char *fileName = nameAux; //argv[1];
@@ -91,7 +92,7 @@ int main(int argc, char *argv[])
 		srand(time_rand.tv_usec);
 		//memset(h_solution,0,size_solution);
 
-		if(fileName[0]=='e'){
+		if(temp_teste[0]=='e'){
 			do{
 				for(j=0;j<h_instance->mAgents;j++){
 					h_solution->resUsage[j+i*h_instance->mAgents] = 0;
@@ -128,9 +129,9 @@ int main(int argc, char *argv[])
 																									+ sizeof(TresourcesAgent)*(h_instance->nJobs*h_instance->mAgents)
 																									+ sizeof(Tcapacity)*h_instance->mAgents;
 
-	int *h_short_list = (int*)malloc(sizeof(int)*(nBlocks*h_instance->nJobs*h_instance->mAgents));
+	int *h_short_list = (int*)malloc(sizeof(int)*(nBlocks*h_instance->nJobs));
 	int *h_long_list = (int*)malloc(sizeof(int)*(h_instance->nJobs*h_instance->mAgents));
-	memset(h_short_list,0,sizeof(int)*(nBlocks*h_instance->nJobs*h_instance->mAgents));
+	memset(h_short_list,0,sizeof(int)*(nBlocks*h_instance->nJobs));
 	memset(h_long_list,0,sizeof(int)*(h_instance->nJobs*h_instance->mAgents));
 	int cost_saida = 1000000;
 	for(i=0;i<nBlocks;i++){
@@ -144,24 +145,29 @@ int main(int argc, char *argv[])
 		if(cost_saida>h_solution->costFinal[i]){
 			cost_saida=h_solution->costFinal[i];
 		}
+//		if(i==0){
+//			for(j=0;j<h_instance->nJobs;j++){
+//				printf("job %d agent %d\n",j, h_solution->s[j+i*h_instance->nJobs]);
+//			}			
+//		}
 	}
 
-
+	int nJ = h_instance->nJobs;
 
 	int *d_short_list;
-	gpuMalloc((void*)&d_short_list,sizeof(int)*(nBlocks*h_instance->nJobs*h_instance->mAgents) );
-	gpuMemcpy(d_short_list, h_short_list,sizeof(int)*(nBlocks*h_instance->nJobs*h_instance->mAgents), cudaMemcpyHostToDevice);
+	gpuMalloc((void*)&d_short_list,sizeof(int)*(nBlocks*h_instance->nJobs) );
+	gpuMemcpy(d_short_list, h_short_list,sizeof(int)*(nBlocks*h_instance->nJobs), cudaMemcpyHostToDevice);
 
 
-//	int blockSize;      // The launch configurator returned block size
-//	int minGridSize;    // The minimum grid size needed to achieve the maximum occupancy for a full device launch
-//	int gridSize;
-//	int N = 1000000;
+	int blockSize;      // The launch configurator returned block size
+	int minGridSize;    // The minimum grid size needed to achieve the maximum occupancy for a full device launch
+	int gridSize;
+	int N = 1000000;
 
-//	cudaOccupancyMaxPotentialBlockSize(&minGridSize, &blockSize,TS_GAP, 0, N);
+	cudaOccupancyMaxPotentialBlockSize(&minGridSize, &blockSize,TS_GAP, 0, N);
 
-//		printf("block size %d\n",blockSize);
-//		printf("Min Grid %d\n",minGridSize);
+		printf("block size %d\n",blockSize);
+		printf("Min Grid %d\n",minGridSize);
 	//	getchar();
 
 
@@ -186,18 +192,28 @@ int main(int argc, char *argv[])
 	cudaEventRecord(start);
 	int n_iteration = atoi(argv[2]);
 	int ite=1;
-	int sizeTabu = atoi(argv[3]);
-	int n_busca = atoi(argv[4]);
+	int n_busca = atoi(argv[3]);
+	int b_solution = atoi(argv[4]);
+	int ite_b = 0;
+	int sizeTabu;
 	int menor,aux1,t1,m1,m2,aux;
 	int *v_menor_pos = (int*)malloc(sizeof(int)*nBlocks);
-	while(ite<=n_iteration){
-		printf("%d \n",ite);
-		TS_GAP<<<nBlocks,nThreads>>>(d_instance, d_solution,d_ejection, d_short_list, d_seed, states, ite, sizeTabu, n_busca);
+	
+	struct timeval inicio;
+	struct timeval fim;
+	int tmili = 0;
+
+	nJ = nJ/(maxChain+1);
+	gettimeofday(&inicio, NULL);
+	while((ite<=n_iteration)&&(tmili<=1200000)){
+		sizeTabu = rand()%nJ + 1;
+		printf("Size tabu: %d\n", sizeTabu);
+		TS_GAP<<<nBlocks,nThreads>>>(d_instance, d_solution,d_ejection, d_short_list, d_seed, states, ite, n_busca);
 		cudaDeviceSynchronize();
 		gpuMemcpy(h_instance, d_instance, size_instance, cudaMemcpyDeviceToHost);
 		gpuMemcpy(h_solution, d_solution, size_solution, cudaMemcpyDeviceToHost);
 		gpuMemcpy(h_ejection, d_ejection, size_ejection, cudaMemcpyDeviceToHost);
-		gpuMemcpy(h_short_list, d_short_list,sizeof(int)*(nBlocks*h_instance->nJobs*h_instance->mAgents), cudaMemcpyDeviceToHost);
+		gpuMemcpy(h_short_list, d_short_list,sizeof(int)*(nBlocks*h_instance->nJobs), cudaMemcpyDeviceToHost);
 		gpuMemcpy(h_seed, d_seed, sizeof(unsigned int)*(nThreads*nBlocks), cudaMemcpyDeviceToHost);
 
 		//reallocation pointers of Instance
@@ -218,7 +234,7 @@ int main(int argc, char *argv[])
 		h_ejection->delta = (Tdelta*)(h_ejection->sizeChain + (nBlocks*nThreads));
 
 
-
+		printf("%d time %d \n",ite,tmili);
 		for(i=0;i<nBlocks;i++){
 			menor = 100000;
 			for(j=0;j<nThreads;j++){
@@ -232,12 +248,12 @@ int main(int argc, char *argv[])
 			if(h_ejection->op[menor + i*nThreads]==1){
 				aux1 = h_ejection->pos[0 + menor*maxChain + i*maxChain*nThreads];
 				//aux2 = ejection->pos[0 + menor*maxChain + i*maxChain*nThreads];
-				h_short_list[aux1 + ((int)h_solution->s[aux1 + i*h_instance->nJobs])*h_instance->nJobs + i*h_instance->nJobs*h_instance->mAgents]= ite + sizeTabu;
+				h_short_list[aux1 + i*h_instance->nJobs] = ite + sizeTabu;
 
 			}else{
 				for(j = 0; j<h_ejection->sizeChain[menor + i*nThreads];j++){
 					aux1 = h_ejection->pos[j + menor*maxChain + i*maxChain*nThreads];
-					h_short_list[aux1 + ((int)h_solution->s[aux1 + i*h_instance->nJobs])*h_instance->nJobs + i*h_instance->nJobs*h_instance->mAgents]=ite + sizeTabu;
+					h_short_list[aux1 + i*h_instance->nJobs] = ite + sizeTabu;
 				}
 
 			}
@@ -267,10 +283,17 @@ int main(int argc, char *argv[])
 			}
 //			printf("cost: %d\n", h_solution->costFinal[i]);
 			      if(cost_saida>h_solution->costFinal[i]){
-		                        cost_saida=h_solution->costFinal[i];
+		                        cost_saida = h_solution->costFinal[i];
                 		}
 
 		}
+
+		for(i=0;i<nBlocks;i++){
+			for(j=0;j<h_instance->nJobs;j++){
+				h_long_list[j + h_solution->s[j+i*h_instance->nJobs]*h_instance->nJobs]++;
+			}
+		}
+
 
 	/*	for(i=0;i<nBlocks;i++){
 			for(j=0;j<h_instance->nJobs;j++){
@@ -309,13 +332,18 @@ int main(int argc, char *argv[])
 				h_seed[i] = rand()%100000;
 			}
 			gpuMemcpy(d_seed, h_seed, sizeof(unsigned int)*(nThreads*nBlocks), cudaMemcpyHostToDevice);
+			gpuMemcpy(d_short_list, h_short_list,sizeof(int)*(nBlocks*h_instance->nJobs), cudaMemcpyHostToDevice);
+			
+		}
+		if((ite_b==0)&&(cost_saida<= 1.01 * b_solution)){
+			ite_b = ite;
 		}
 		ite++;
-
+		gettimeofday(&fim, NULL);
+		tmili = (int) (1000 * (fim.tv_sec - inicio.tv_sec) + (fim.tv_usec - inicio.tv_usec) / 1000);
 	}
-	printf("cost: %d\n", cost_saida);
+	printf("cost: %d\n ite: %d\n", cost_saida, ite_b);
 
-	printf("Hellow world!\n");
 	cudaFree(states);
 	cudaFree(d_instance);
 	cudaFree(d_solution);

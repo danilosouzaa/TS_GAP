@@ -1,8 +1,8 @@
 #include "Solution.h"
 
-const int nBlocks = 24;
-const int nThreads = 576;
-const int maxChain = 8;
+const int nBlocks = 3;
+const int nThreads = 100;
+const int maxChain = 10;
 
 Solution* allocationPointersSolution(Instance *inst){
 	size_t size_solution =  sizeof(Solution)

@@ -1,0 +1,22 @@
+Killed
+Killed
+Killed
+Killed
+CUDA error at TS-GAP.cu:209 code=11(cudaErrorInvalidValue) "cudaMemcpy(h_ejection,d_ejection,size_ejection,cudaMemcpyDeviceToHost)" 
+CUDA error at TS-GAP.cu:209 code=11(cudaErrorInvalidValue) "cudaMemcpy(h_ejection,d_ejection,size_ejection,cudaMemcpyDeviceToHost)" 
+CUDA error at TS-GAP.cu:209 code=11(cudaErrorInvalidValue) "cudaMemcpy(h_ejection,d_ejection,size_ejection,cudaMemcpyDeviceToHost)" 
+CUDA error at TS-GAP.cu:209 code=11(cudaErrorInvalidValue) "cudaMemcpy(h_ejection,d_ejection,size_ejection,cudaMemcpyDeviceToHost)" 
+CUDA error at TS-GAP.cu:209 code=11(cudaErrorInvalidValue) "cudaMemcpy(h_ejection,d_ejection,size_ejection,cudaMemcpyDeviceToHost)" 
+CUDA error at TS-GAP.cu:209 code=11(cudaErrorInvalidValue) "cudaMemcpy(h_ejection,d_ejection,size_ejection,cudaMemcpyDeviceToHost)" 
+CUDA error at TS-GAP.cu:209 code=11(cudaErrorInvalidValue) "cudaMemcpy(h_ejection,d_ejection,size_ejection,cudaMemcpyDeviceToHost)" 
+CUDA error at TS-GAP.cu:209 code=11(cudaErrorInvalidValue) "cudaMemcpy(h_ejection,d_ejection,size_ejection,cudaMemcpyDeviceToHost)" 
+CUDA error at TS-GAP.cu:209 code=11(cudaErrorInvalidValue) "cudaMemcpy(h_ejection,d_ejection,size_ejection,cudaMemcpyDeviceToHost)" 
+CUDA error at TS-GAP.cu:209 code=11(cudaErrorInvalidValue) "cudaMemcpy(h_ejection,d_ejection,size_ejection,cudaMemcpyDeviceToHost)" 
+CUDA error at TS-GAP.cu:209 code=11(cudaErrorInvalidValue) "cudaMemcpy(h_ejection,d_ejection,size_ejection,cudaMemcpyDeviceToHost)" 
+CUDA error at TS-GAP.cu:209 code=11(cudaErrorInvalidValue) "cudaMemcpy(h_ejection,d_ejection,size_ejection,cudaMemcpyDeviceToHost)" 
+CUDA error at TS-GAP.cu:209 code=11(cudaErrorInvalidValue) "cudaMemcpy(h_ejection,d_ejection,size_ejection,cudaMemcpyDeviceToHost)" 
+CUDA error at TS-GAP.cu:209 code=11(cudaErrorInvalidValue) "cudaMemcpy(h_ejection,d_ejection,size_ejection,cudaMemcpyDeviceToHost)" 
+CUDA error at TS-GAP.cu:209 code=11(cudaErrorInvalidValue) "cudaMemcpy(h_ejection,d_ejection,size_ejection,cudaMemcpyDeviceToHost)" 
+Terminated
+Terminated
+Terminated
