@@ -1,0 +1,732 @@
+exp.  e05100 100000 5  12681  
+Found 2 GPUs!
+GPU 0 initialized!
+../Instances/e05100 
+Parameters load
+Pointers Allocated!
+Initial cost: 15988
+Initial cost: 16114
+Initial cost: 19581
+Initial cost: 17784
+Initial cost: 15571
+Initial cost: 20388
+Initial cost: 17784
+Initial cost: 19762
+Initial cost: 15745
+Initial cost: 16135
+Initial cost: 17321
+Initial cost: 15692
+block size 896
+Min Grid 12
+time:1200030
+cost: 12733
+ ite: 317
+ok1
+pelo block: 0
+pelo block: 1
+pelo block: 2
+pelo block: 3
+pelo block: 4
+pelo block: 5
+pelo block: 6
+pelo block: 7
+pelo block: 8
+pelo block: 9
+pelo block: 10
+pelo block: 11
+ok2
+Solution: 12933 - 13079
+Similarity Total:848
+Solution: 12733 - 12844
+Similarity Total:799
+Solution: 13069 - 13105
+Similarity Total:794
+Solution: 13173 - 13254
+Similarity Total:807
+Solution: 12852 - 12973
+Similarity Total:870
+Solution: 13028 - 13177
+Similarity Total:830
+Solution: 12884 - 12956
+Similarity Total:861
+Solution: 12983 - 13081
+Similarity Total:842
+Solution: 12886 - 12965
+Similarity Total:866
+Solution: 12952 - 13005
+Similarity Total:863
+Solution: 12754 - 12848
+Similarity Total:824
+Solution: 12824 - 12904
+Similarity Total:844
+Solution with most similarity is 4 with 870
+Create frenquecy ok!
+exp.  e05200 100000 5  24930  
+Found 2 GPUs!
+GPU 0 initialized!
+../Instances/e05200 
+Parameters load
+Pointers Allocated!
+Initial cost: 27922
+Initial cost: 27922
+Initial cost: 30715
+Initial cost: 26847
+Initial cost: 26829
+Initial cost: 37567
+Initial cost: 30194
+Initial cost: 30452
+Initial cost: 35869
+Initial cost: 32052
+Initial cost: 27744
+Initial cost: 36384
+block size 896
+Min Grid 12
+time:1200049
+cost: 25035
+ ite: 1170
+ok1
+pelo block: 0
+pelo block: 1
+pelo block: 2
+pelo block: 3
+pelo block: 4
+pelo block: 5
+pelo block: 6
+pelo block: 7
+pelo block: 8
+pelo block: 9
+pelo block: 10
+pelo block: 11
+ok2
+Solution: 25358 - 25478
+Similarity Total:1817
+Solution: 25391 - 25429
+Similarity Total:1748
+Solution: 25344 - 25484
+Similarity Total:1786
+Solution: 25035 - 25109
+Similarity Total:1726
+Solution: 25443 - 25549
+Similarity Total:1773
+Solution: 25454 - 25501
+Similarity Total:1719
+Solution: 25388 - 25442
+Similarity Total:1731
+Solution: 25394 - 25558
+Similarity Total:1754
+Solution: 25204 - 25334
+Similarity Total:1786
+Solution: 25223 - 25283
+Similarity Total:1768
+Solution: 25355 - 25427
+Similarity Total:1762
+Solution: 25203 - 25293
+Similarity Total:1756
+Solution with most similarity is 0 with 1817
+Create frenquecy ok!
+exp.  e10100 100000 5  11577  
+Found 2 GPUs!
+GPU 0 initialized!
+../Instances/e10100 
+Parameters load
+Pointers Allocated!
+Initial cost: 13729
+Initial cost: 18363
+Initial cost: 13091
+Initial cost: 18363
+Initial cost: 15277
+Initial cost: 13563
+Initial cost: 14256
+Initial cost: 13531
+Initial cost: 13692
+Initial cost: 13687
+Initial cost: 18363
+Initial cost: 13531
+block size 896
+Min Grid 12
+time:1200019
+cost: 11736
+ ite: 0
+ok1
+pelo block: 0
+pelo block: 1
+pelo block: 2
+pelo block: 3
+pelo block: 4
+pelo block: 5
+pelo block: 6
+pelo block: 7
+pelo block: 8
+pelo block: 9
+pelo block: 10
+pelo block: 11
+ok2
+Solution: 11852 - 11898
+Similarity Total:596
+Solution: 12121 - 12170
+Similarity Total:525
+Solution: 11911 - 11965
+Similarity Total:623
+Solution: 11851 - 11882
+Similarity Total:594
+Solution: 11978 - 12069
+Similarity Total:633
+Solution: 11736 - 11799
+Similarity Total:615
+Solution: 12089 - 12175
+Similarity Total:599
+Solution: 11786 - 11857
+Similarity Total:628
+Solution: 11808 - 11850
+Similarity Total:617
+Solution: 11841 - 11899
+Similarity Total:596
+Solution: 12296 - 12307
+Similarity Total:520
+Solution: 11743 - 11852
+Similarity Total:638
+Solution with most similarity is 11 with 638
+Create frenquecy ok!
+exp.  e10200 100000 5  23307  
+Found 2 GPUs!
+GPU 0 initialized!
+../Instances/e10200 
+Parameters load
+Pointers Allocated!
+Initial cost: 25542
+Initial cost: 35447
+Initial cost: 34514
+Initial cost: 34923
+Initial cost: 26042
+Initial cost: 36899
+Initial cost: 25886
+Initial cost: 28397
+Initial cost: 25829
+Initial cost: 25939
+Initial cost: 26128
+Initial cost: 24715
+block size 896
+Min Grid 12
+time:1200021
+cost: 23467
+ ite: 4777
+ok1
+pelo block: 0
+pelo block: 1
+pelo block: 2
+pelo block: 3
+pelo block: 4
+pelo block: 5
+pelo block: 6
+pelo block: 7
+pelo block: 8
+pelo block: 9
+pelo block: 10
+pelo block: 11
+ok2
+Solution: 23521 - 23638
+Similarity Total:1208
+Solution: 24645 - 24726
+Similarity Total:1180
+Solution: 24493 - 24574
+Similarity Total:1171
+Solution: 24664 - 24717
+Similarity Total:1098
+Solution: 23743 - 23788
+Similarity Total:1256
+Solution: 24166 - 24256
+Similarity Total:1123
+Solution: 23617 - 23668
+Similarity Total:1288
+Solution: 24097 - 24155
+Similarity Total:1296
+Solution: 23823 - 23880
+Similarity Total:1302
+Solution: 23467 - 23532
+Similarity Total:1260
+Solution: 23699 - 23816
+Similarity Total:1279
+Solution: 23555 - 23648
+Similarity Total:1265
+Solution with most similarity is 8 with 1302
+Create frenquecy ok!
+exp.  e10400 100000 5  45746  
+Found 2 GPUs!
+GPU 0 initialized!
+../Instances/e10400 
+Parameters load
+Pointers Allocated!
+Initial cost: 56147
+Initial cost: 50197
+Initial cost: 73043
+Initial cost: 47101
+Initial cost: 59419
+Initial cost: 60190
+Initial cost: 50268
+Initial cost: 69895
+Initial cost: 47095
+Initial cost: 55214
+Initial cost: 63177
+Initial cost: 51948
+block size 896
+Min Grid 12
+time:1200024
+cost: 46028
+ ite: 1791
+ok1
+pelo block: 0
+pelo block: 1
+pelo block: 2
+pelo block: 3
+pelo block: 4
+pelo block: 5
+pelo block: 6
+pelo block: 7
+pelo block: 8
+pelo block: 9
+pelo block: 10
+pelo block: 11
+ok2
+Solution: 47864 - 47897
+Similarity Total:2369
+Solution: 46787 - 46810
+Similarity Total:2523
+Solution: 49021 - 49035
+Similarity Total:2009
+Solution: 46069 - 46106
+Similarity Total:2463
+Solution: 48512 - 48539
+Similarity Total:2386
+Solution: 48584 - 48607
+Similarity Total:2432
+Solution: 46582 - 46660
+Similarity Total:2565
+Solution: 51138 - 51155
+Similarity Total:2007
+Solution: 46028 - 46099
+Similarity Total:2515
+Solution: 47438 - 47462
+Similarity Total:2403
+Solution: 47959 - 47962
+Similarity Total:2389
+Solution: 46960 - 47012
+Similarity Total:2557
+Solution with most similarity is 6 with 2565
+Create frenquecy ok!
+exp.  e15900 100000 5  102421  
+Found 2 GPUs!
+GPU 0 initialized!
+../Instances/e15900 
+Parameters load
+Pointers Allocated!
+Initial cost: 107210
+Initial cost: 138120
+Initial cost: 132289
+Initial cost: 119358
+Initial cost: 115315
+Initial cost: 123720
+Initial cost: 124203
+Initial cost: 143177
+Initial cost: 114696
+Initial cost: 157717
+Initial cost: 114711
+Initial cost: 115115
+block size 896
+Min Grid 12
+time:1200000
+time:1200033
+cost: 103766
+ ite: 0
+ok1
+pelo block: 0
+pelo block: 1
+pelo block: 2
+pelo block: 3
+pelo block: 4
+pelo block: 5
+pelo block: 6
+pelo block: 7
+pelo block: 8
+pelo block: 9
+pelo block: 10
+pelo block: 11
+ok2
+Solution: 103766 - 103808
+Similarity Total:4870
+Solution: 109167 - 109237
+Similarity Total:4750
+Solution: 109347 - 109347
+Similarity Total:4691
+Solution: 106665 - 106668
+Similarity Total:5090
+Solution: 105339 - 105377
+Similarity Total:5167
+Solution: 107218 - 107277
+Similarity Total:4974
+Solution: 107162 - 107168
+Similarity Total:4922
+Solution: 110684 - 110748
+Similarity Total:4411
+Solution: 105643 - 105702
+Similarity Total:5100
+Solution: 114547 - 114559
+Similarity Total:3818
+Solution: 105630 - 105638
+Similarity Total:5131
+Solution: 106292 - 106344
+Similarity Total:5146
+Solution with most similarity is 4 with 5167
+Create frenquecy ok!
+exp.  e20100 100000 5  8436  
+Found 2 GPUs!
+GPU 0 initialized!
+../Instances/e20100 
+Parameters load
+Pointers Allocated!
+Initial cost: 18393
+Initial cost: 13537
+Initial cost: 12362
+Initial cost: 18610
+Initial cost: 12087
+Initial cost: 18610
+Initial cost: 12759
+Initial cost: 12154
+Initial cost: 14367
+Initial cost: 16682
+Initial cost: 12880
+Initial cost: 18466
+block size 896
+Min Grid 12
+time:1200020
+cost: 8742
+ ite: 0
+ok1
+pelo block: 0
+pelo block: 1
+pelo block: 2
+pelo block: 3
+pelo block: 4
+pelo block: 5
+pelo block: 6
+pelo block: 7
+pelo block: 8
+pelo block: 9
+pelo block: 10
+pelo block: 11
+ok2
+Solution: 9416 - 9429
+Similarity Total:286
+Solution: 8983 - 9005
+Similarity Total:316
+Solution: 8919 - 8937
+Similarity Total:373
+Solution: 9016 - 9021
+Similarity Total:304
+Solution: 8743 - 8815
+Similarity Total:318
+Solution: 8742 - 8829
+Similarity Total:329
+Solution: 9006 - 9016
+Similarity Total:333
+Solution: 8937 - 8953
+Similarity Total:350
+Solution: 9043 - 9053
+Similarity Total:261
+Solution: 9057 - 9069
+Similarity Total:326
+Solution: 8972 - 8987
+Similarity Total:335
+Solution: 9103 - 9161
+Similarity Total:351
+Solution with most similarity is 2 with 373
+Create frenquecy ok!
+exp.  e20200 100000 5  22379  
+Found 2 GPUs!
+GPU 0 initialized!
+../Instances/e20200 
+Parameters load
+Pointers Allocated!
+Initial cost: 26225
+Initial cost: 23336
+Initial cost: 29618
+Initial cost: 27069
+Initial cost: 30630
+Initial cost: 30263
+Initial cost: 24628
+Initial cost: 29715
+Initial cost: 33847
+Initial cost: 33516
+Initial cost: 37447
+Initial cost: 36911
+block size 896
+Min Grid 12
+time:1200012
+cost: 22690
+ ite: 0
+ok1
+pelo block: 0
+pelo block: 1
+pelo block: 2
+pelo block: 3
+pelo block: 4
+pelo block: 5
+pelo block: 6
+pelo block: 7
+pelo block: 8
+pelo block: 9
+pelo block: 10
+pelo block: 11
+ok2
+Solution: 23452 - 23488
+Similarity Total:735
+Solution: 22690 - 22727
+Similarity Total:620
+Solution: 24324 - 24349
+Similarity Total:663
+Solution: 23633 - 23662
+Similarity Total:675
+Solution: 24490 - 24507
+Similarity Total:687
+Solution: 24463 - 24492
+Similarity Total:650
+Solution: 22799 - 22843
+Similarity Total:720
+Solution: 24136 - 24162
+Similarity Total:700
+Solution: 24443 - 24453
+Similarity Total:615
+Solution: 25644 - 25663
+Similarity Total:648
+Solution: 25029 - 25064
+Similarity Total:523
+Solution: 25641 - 25688
+Similarity Total:518
+Solution with most similarity is 0 with 735
+Create frenquecy ok!
+exp.  e20400 100000 5  44877  
+Found 2 GPUs!
+GPU 0 initialized!
+../Instances/e20400 
+Parameters load
+Pointers Allocated!
+Initial cost: 46358
+Initial cost: 46290
+Initial cost: 59961
+Initial cost: 46254
+Initial cost: 54404
+Initial cost: 69419
+Initial cost: 67182
+Initial cost: 49468
+Initial cost: 46496
+Initial cost: 60658
+Initial cost: 72918
+Initial cost: 51894
+block size 896
+Min Grid 12
+time:1200000
+time:1200034
+cost: 45234
+ ite: 3070
+ok1
+pelo block: 0
+pelo block: 1
+pelo block: 2
+pelo block: 3
+pelo block: 4
+pelo block: 5
+pelo block: 6
+pelo block: 7
+pelo block: 8
+pelo block: 9
+pelo block: 10
+pelo block: 11
+ok2
+Solution: 45234 - 45287
+Similarity Total:1701
+Solution: 45259 - 45283
+Similarity Total:1723
+Solution: 48612 - 48627
+Similarity Total:1439
+Solution: 45390 - 45419
+Similarity Total:1652
+Solution: 47521 - 47550
+Similarity Total:1594
+Solution: 50258 - 50291
+Similarity Total:1372
+Solution: 49054 - 49074
+Similarity Total:1310
+Solution: 45978 - 46008
+Similarity Total:1702
+Solution: 45267 - 45306
+Similarity Total:1793
+Solution: 49304 - 49318
+Similarity Total:1494
+Solution: 49271 - 49297
+Similarity Total:1258
+Solution: 46690 - 46727
+Similarity Total:1676
+Solution with most similarity is 8 with 1793
+Create frenquecy ok!
+exp.  e30900 100000 5  100429  
+Found 2 GPUs!
+GPU 0 initialized!
+../Instances/e30900 
+Parameters load
+Pointers Allocated!
+Initial cost: 109545
+Initial cost: 104443
+Initial cost: 121083
+Initial cost: 151930
+Initial cost: 111993
+Initial cost: 155182
+Initial cost: 154594
+Initial cost: 138319
+Initial cost: 139940
+Initial cost: 122682
+Initial cost: 108229
+Initial cost: 105548
+block size 896
+Min Grid 12
+exp.  e40400 100000 5  44562  
+Found 2 GPUs!
+GPU 0 initialized!
+../Instances/e40400 
+Parameters load
+Pointers Allocated!
+Initial cost: 46337
+Initial cost: 58981
+Initial cost: 50478
+Initial cost: 71771
+Initial cost: 61886
+Initial cost: 72996
+Initial cost: 67084
+Initial cost: 68091
+Initial cost: 62927
+Initial cost: 58997
+Initial cost: 56944
+Initial cost: 47698
+block size 896
+Min Grid 12
+exp.  e60900 100000 5  100153  
+Found 2 GPUs!
+GPU 0 initialized!
+../Instances/e60900 
+Parameters load
+Pointers Allocated!
+Initial cost: 137873
+Initial cost: 121544
+Initial cost: 131738
+Initial cost: 140494
+Initial cost: 104413
+Initial cost: 148154
+Initial cost: 133432
+Initial cost: 105261
+Initial cost: 118314
+Initial cost: 111813
+Initial cost: 138553
+Initial cost: 118660
+block size 896
+Min Grid 12
+exp.  e201600 100000 5  180646  
+Found 2 GPUs!
+GPU 0 initialized!
+../Instances/e201600 
+Parameters load
+Pointers Allocated!
+Initial cost: 231414
+Initial cost: 275926
+Initial cost: 231671
+Initial cost: 226272
+Initial cost: 199873
+Initial cost: 183703
+Initial cost: 202947
+Initial cost: 214917
+Initial cost: 276997
+Initial cost: 241245
+Initial cost: 186506
+Initial cost: 216925
+block size 896
+Min Grid 12
+time:1200019
+cost: 182875
+ ite: 0
+ok1
+pelo block: 0
+pelo block: 1
+pelo block: 2
+pelo block: 3
+pelo block: 4
+pelo block: 5
+pelo block: 6
+pelo block: 7
+pelo block: 8
+pelo block: 9
+pelo block: 10
+pelo block: 11
+ok2
+Solution: 199420 - 199424
+Similarity Total:6940
+Solution: 208550 - 208551
+Similarity Total:5276
+Solution: 196895 - 196904
+Similarity Total:7006
+Solution: 197725 - 197780
+Similarity Total:7243
+Solution: 188438 - 188490
+Similarity Total:7144
+Solution: 182875 - 183146
+Similarity Total:6770
+Solution: 189628 - 189643
+Similarity Total:7233
+Solution: 193172 - 193172
+Similarity Total:7417
+Solution: 208905 - 208905
+Similarity Total:5172
+Solution: 203472 - 203518
+Similarity Total:6730
+Solution: 183430 - 183505
+Similarity Total:6735
+Solution: 193382 - 193397
+Similarity Total:7294
+Solution with most similarity is 7 with 7417
+Create frenquecy ok!
+exp.  e401600 100000 5  178294  
+Found 2 GPUs!
+GPU 0 initialized!
+../Instances/e401600 
+Parameters load
+Pointers Allocated!
+Initial cost: 294966
+Initial cost: 207793
+Initial cost: 183473
+Initial cost: 262904
+Initial cost: 196076
+Initial cost: 198143
+Initial cost: 221774
+Initial cost: 181685
+Initial cost: 269694
+Initial cost: 188311
+Initial cost: 200313
+Initial cost: 283146
+block size 896
+Min Grid 12
+exp.  e801600 100000 5  176828  
+Found 2 GPUs!
+GPU 0 initialized!
+../Instances/e801600 
+Parameters load
+Pointers Allocated!
+Initial cost: 209381
+Initial cost: 205169
+Initial cost: 238822
+Initial cost: 257344
+Initial cost: 204444
+Initial cost: 208752
+Initial cost: 301707
+Initial cost: 249448
+Initial cost: 263240
+Initial cost: 238763
+Initial cost: 219086
+Initial cost: 204009
+block size 896
+Min Grid 12

@@ -1,7 +1,7 @@
 #include "gSolution.cuh"
 
-const int nBlocks = 3;
-const int nThreads = 100;
+const int nBlocks =12;
+const int nThreads = 896;
 const int maxChain = 10;
 //remove sizeTabu of parameters in gSolution.cuh and TS-GAP.cu
 
