@@ -11,7 +11,7 @@
 
 EXTERN_C_BEGIN
 typedef int TcostFinal;
-typedef char Ts;
+typedef unsigned char Ts;
 typedef short int TresUsage;
 
 typedef short int Tpos;
