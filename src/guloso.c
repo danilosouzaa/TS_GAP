@@ -3,7 +3,7 @@
  
 
 
-const int nThread =100;
+const int nThread =64;
 
 //Create vector with priority of allocation jobs in Agents 
 int* inicializeVector(Instance *inst, float p1, float p2)

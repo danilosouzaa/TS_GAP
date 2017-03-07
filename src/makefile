@@ -1,5 +1,5 @@
 all:
-	nvcc *.c *.cu -O3 -o m
+	nvcc -G --ptxas-options=-v *.c *.cu -O3 -o m
 
 clean:
 	rm -f m && rm -f *.o

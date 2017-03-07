@@ -1,7 +1,7 @@
 #include "Solution.h"
 
-const int nBlocks =2;
-const int nThreads = 100;
+const int nBlocks =10;
+const int nThreads = 64;
 const int maxChain = 10;
 
 Solution* allocationPointersSolution(Instance *inst){

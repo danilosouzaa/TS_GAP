@@ -23,8 +23,8 @@
 #include "gSolution.cuh"
 #include "guloso.h"
 
-const int nThreads = 100;
-const int nBlocks =2;
+const int nThreads = 64;
+const int nBlocks = 10;
 const int maxChain = 10;
 
 int main(int argc, char *argv[])
@@ -220,12 +220,15 @@ int main(int argc, char *argv[])
 	nJ =1.25*( nJ/(maxChain+1) );
 //	nJ = 15;
 	gettimeofday(&inicio, NULL);
+	size_t freeMem, totalMem;
 	gettimeofday(&t_inicio,NULL);
 	while((ite<=n_iteration)&&(tmili<=(ti*60000))&&(tmelhora<15000)){
 		sizeTabu = rand()%nJ + 1;
 		//		printf("Size tabu: %d\n", sizeTabu);
 		TS_GAP<<<nBlocks,nThreads>>>(d_instance, d_solution,d_ejection, d_short_list, d_seed, states, ite, n_busca);
-		cudaDeviceSynchronize();
+		gpuDeviceSynchronize();
+		cudaMemGetInfo(&freeMem, &totalMem);
+		printf("Free = %zu, Total = %zu\n, size_intance = %zu", freeMem, totalMem,size_instance);
 		gpuMemcpy(h_instance, d_instance, size_instance, cudaMemcpyDeviceToHost);
 		gpuMemcpy(h_solution, d_solution, size_solution, cudaMemcpyDeviceToHost);
 		gpuMemcpy(h_ejection, d_ejection, size_ejection, cudaMemcpyDeviceToHost);

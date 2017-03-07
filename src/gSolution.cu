@@ -1,18 +1,19 @@
 #include "gSolution.cuh"
 
-const int nBlocks =2;
-const int nThreads = 100;
+const int nBlocks =10;
+const int nThreads = 64;
 const int maxChain = 10;
 //remove sizeTabu of parameters in gSolution.cuh and TS-GAP.cu
 
 __global__ void TS_GAP(Instance *inst, Solution *sol, EjectionChain *ejection, int *tabuListshort, unsigned int *seed, curandState_t* states, int iteration, int n_busca){
 	//variables of auxiliars
-	int i, j,k,flag, aux, aux_2;
+	register int i, j,k,flag, aux, aux_2;
 	//use for counting amount resources
-	int res_aux[100];
+	register unsigned short int res_aux[150];
 	//Solution of block in memory shared
-	__shared__ short int s_shared[1600];
-//	s_shared = (short int *)malloc(sizeof(short int)*inst->nJobs);
+	//__shared__ short int s_shared[9000];
+	__shared__ unsigned char s_shared[9000];
+	//s_shared = (short int *)malloc(sizeof(short int)*inst->nJobs);
 	//Iterator of size search
 	int s_search;
 	int term = threadIdx.x + blockIdx.x*nThreads;
@@ -51,7 +52,7 @@ __global__ void TS_GAP(Instance *inst, Solution *sol, EjectionChain *ejection, i
 //		}
 		
 //	}
-	
+	int a_1,a_2,f_1;
 	for(s_search = 0; s_search < n_busca; s_search++){
 		do{
 			aux = 0;
@@ -68,8 +69,11 @@ __global__ void TS_GAP(Instance *inst, Solution *sol, EjectionChain *ejection, i
 				if((sol->resUsage[ejection->pos[1 + tPos] + blockIdx.x*inst->mAgents] + inst->resourcesAgent[ejection->pos[0 + tPos]*inst->mAgents + ejection->pos[ 1 + tPos]] <= inst->capacity[ejection->pos[1 + tPos]])
 						&&(tabuListshort[ejection->pos[0+tPos] + blockIdx.x*inst->nJobs]<=iteration))
 				{
-					ejection->delta[term] = inst->cost[ejection->pos[0 + tPos]*inst->mAgents + ejection->pos[1 + tPos]] - inst->cost[ejection->pos[0 + tPos]*inst->mAgents + ((int)sol->s[ejection->pos[0 + tPos] + blockIdx.x*inst->nJobs])];
-					res_aux[ejection->pos[1 + tPos] + blockIdx.x*inst->mAgents] += inst->resourcesAgent[ejection->pos[0 + tPos]*inst->mAgents + ejection->pos[ 1 + tPos]];
+					ejection->delta[term] = inst->cost[ejection->pos[0 + tPos]*inst->mAgents + ejection->pos[1 + tPos]] - inst->cost[ejection->pos[0 + tPos]*inst->mAgents + s_shared[ejection->pos[0 + tPos]]];
+					a_1 = ejection->pos[0 + tPos];
+					a_2 = ejection->pos[1 + tPos]; 
+					f_1 = inst->resourcesAgent[a_1*inst->mAgents + a_2];	
+					res_aux[a_2] += f_1;
 					res_aux[s_shared[ejection->pos[0 + tPos]]] -= inst->resourcesAgent[ejection->pos[0 + tPos]*inst->mAgents + s_shared[ejection->pos[0 + tPos]]];
 					aux = 1;
 				}
@@ -113,7 +117,7 @@ __global__ void TS_GAP(Instance *inst, Solution *sol, EjectionChain *ejection, i
 										ejection->delta[term] += inst->cost[ejection->pos[(i-1) + tPos]*inst->mAgents+s_shared[ejection->pos[i +tPos]]] - inst->cost[ejection->pos[i + tPos]*inst->mAgents+s_shared[ejection->pos[i +tPos]]]; //update delta
 										//ejection->delta[term] -= inst->cost[ejection->pos[i + tPos]*inst->mAgents+s_shared[ejection->pos[i +tPos]]];
 										if(sol->resUsage[s_shared[ejection->pos[0 + tPos]] + blockIdx.x*inst->mAgents] - inst->resourcesAgent[ejection->pos[0 + tPos]*inst->mAgents + s_shared[ejection->pos[0 + tPos]]] + inst->resourcesAgent[ejection->pos[i + tPos]*inst->mAgents + s_shared[ejection->pos[0 + tPos]]] <= inst->capacity[s_shared[ejection->pos[0 + tPos]]]){
-											delta_aux[i] = ejection->delta[term] + inst->cost[ejection->pos[i+tPos]*inst->mAgents + ((int)sol->s[ejection->pos[0 + tPos] + blockIdx.x*inst->nJobs])]; 
+											delta_aux[i] = ejection->delta[term] + inst->cost[ejection->pos[i+tPos]*inst->mAgents + s_shared[ejection->pos[0 + tPos]] ]; 
 										}else{
 											delta_aux[i] = 1000000;
 										}
@@ -130,7 +134,7 @@ __global__ void TS_GAP(Instance *inst, Solution *sol, EjectionChain *ejection, i
 									ejection->delta[term] += inst->cost[ejection->pos[(i-1) + tPos]*inst->mAgents+s_shared[ejection->pos[i +tPos]]] - inst->cost[ejection->pos[i + tPos]*inst->mAgents+s_shared[ejection->pos[i +tPos]]]; //update delta
 									//ejection->delta[term] -= inst->cost[ejection->pos[i + tPos]*inst->mAgents+s_shared[ejection->pos[i +tPos]]];
 									if(sol->resUsage[s_shared[ejection->pos[0 + tPos]] + blockIdx.x*inst->mAgents] - inst->resourcesAgent[ejection->pos[0 + tPos]*inst->mAgents + s_shared[ejection->pos[0 + tPos]]] + inst->resourcesAgent[ejection->pos[i + tPos]*inst->mAgents + s_shared[ejection->pos[0 + tPos]]] <= inst->capacity[s_shared[ejection->pos[0 + tPos]]]){
-										delta_aux[i] = ejection->delta[term] + inst->cost[ejection->pos[i+tPos]*inst->mAgents + ((int)sol->s[ejection->pos[0 + tPos] + blockIdx.x*inst->nJobs])]; 
+										delta_aux[i] = ejection->delta[term] + inst->cost[ejection->pos[i+tPos]*inst->mAgents + s_shared[ejection->pos[0 + tPos]] ]; 
 									}else{
 										delta_aux[i] = 1000000;
 									}
