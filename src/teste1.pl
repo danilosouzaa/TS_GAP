@@ -6,10 +6,10 @@ my @names =(" c05100 100000 5   1931 " , " d05200 100000 5   12742 " , " e10100 
 my $n_lc = 0;
 my $n_ex = 0;
 foreach my $n (@names){
-                open(FIN,">>Resultado05");
+                open(FIN,">>Res140");
                 print FIN ("exp. $n \n");
                 close(FIN);
-                system("./m $n  >>Resultado05");
+                system("./m $n  >>Res140");
 }
 
 exit;

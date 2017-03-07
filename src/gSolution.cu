@@ -1,7 +1,7 @@
 #include "gSolution.cuh"
 
-const int nBlocks =12;
-const int nThreads = 896;
+const int nBlocks =2;
+const int nThreads = 100;
 const int maxChain = 10;
 //remove sizeTabu of parameters in gSolution.cuh and TS-GAP.cu
 
@@ -9,7 +9,7 @@ __global__ void TS_GAP(Instance *inst, Solution *sol, EjectionChain *ejection, i
 	//variables of auxiliars
 	int i, j,k,flag, aux, aux_2;
 	//use for counting amount resources
-	int res_aux[80];
+	int res_aux[100];
 	//Solution of block in memory shared
 	__shared__ short int s_shared[1600];
 //	s_shared = (short int *)malloc(sizeof(short int)*inst->nJobs);

@@ -1,7 +1,7 @@
 #include "Solution.h"
 
-const int nBlocks = 12;
-const int nThreads = 896;
+const int nBlocks =2;
+const int nThreads = 100;
 const int maxChain = 10;
 
 Solution* allocationPointersSolution(Instance *inst){
@@ -70,6 +70,28 @@ void create_frequency(Solution *sol, Instance *inst,int *cont_similarity,int pos
 			}
 			fclose(f);
 			printf("Create frenquecy ok!\n");
+}
+
+void create_frequency_2(Solution *sol, Instance *inst,int *cont_similarity,int pos_best, const char *fileName){
+                        FILE *f;
+                        char nf[30]="";
+                        strcat(nf,"Freq2_");
+                        strcat(nf,fileName);
+                        strcat(nf,".txt");
+                        int i,j;
+                        f = fopen (nf,"w");
+                        if(f==NULL){
+                                printf("erro \n ");
+                        }else{
+				
+                                for(i=0;i<inst->nJobs;i++){
+					for(j=0;j<inst->mAgents;j++){
+                                                fprintf(f,"x(%d,%d) = %d \n",i+1,j+1 , cont_similarity[i + j*inst->nJobs]);
+                               		}
+				 }
+                        }
+                        fclose(f);
+                        printf("Create frenquecy ok!\n");
 }
 
 
